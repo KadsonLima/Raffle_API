@@ -1,0 +1,95 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Rifas Endpoints",
+    "dateExported": "2023-07-26T23:56:35.458Z",
+    "version": "1.1",
+    "folders": [
+        {
+            "_id": "9fa71017-8e3a-4309-a537-1c9df9cefd0b",
+            "name": "Auth",
+            "containerId": "",
+            "created": "2023-07-26T23:24:40.498Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "2904c92a-216c-4642-b2ba-0957e3780779",
+            "name": "Create Users",
+            "containerId": "",
+            "created": "2023-07-26T23:25:35.830Z",
+            "sortNum": 20000
+        },
+        {
+            "_id": "066c9e47-9a6c-4406-bb97-8fe79160ad38",
+            "name": "Raffles",
+            "containerId": "",
+            "created": "2023-07-26T23:30:05.534Z",
+            "sortNum": 30000
+        },
+        {
+            "_id": "50c610ba-63e8-4e8f-ada8-c43b974bc2f8",
+            "name": "Tickets",
+            "containerId": "",
+            "created": "2023-07-26T23:30:13.120Z",
+            "sortNum": 40000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "e83be546-62e9-4e6d-8fe2-0429d62b4b0c",
+            "colId": "6b7f25bb-8acb-4622-8cbb-c8e91c377898",
+            "containerId": "9fa71017-8e3a-4309-a537-1c9df9cefd0b",
+            "name": "Loguin Admin",
+            "url": "http://localhost:4000/auth/admin",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2023-07-26T23:24:15.388Z",
+            "modified": "2023-07-26T23:24:15.388Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\":\"kadson-kaio@hotmail.com\", \n  \"password\":\"32050832\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "6cdb0d5b-fc1b-4256-bc8c-2983ac8ee7f1",
+            "colId": "6b7f25bb-8acb-4622-8cbb-c8e91c377898",
+            "containerId": "2904c92a-216c-4642-b2ba-0957e3780779",
+            "name": "Create User",
+            "url": "http://localhost:4000/users/",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2023-07-26T23:28:30.814Z",
+            "modified": "2023-07-26T23:28:55.332Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{ \n  \"name\":\"Kadson Lima\",\n  \"number\":\"84996443438\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "19dd132e-d40b-4333-83da-2d6f807d04e2",
+            "colId": "6b7f25bb-8acb-4622-8cbb-c8e91c377898",
+            "containerId": "9fa71017-8e3a-4309-a537-1c9df9cefd0b",
+            "name": "Loguin User",
+            "url": "http://localhost:4000/auth/sign-in",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2023-07-26T23:24:49.303Z",
+            "modified": "2023-07-26T23:27:59.585Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"number\":\"84996443438\"\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ]
+}
