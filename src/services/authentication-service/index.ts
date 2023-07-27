@@ -45,7 +45,7 @@ async function signInManager(params: SignInParamsManager){
   const { email, password } = params;
 
   const user = await prisma.user.findFirst({where:{email}})
-console.log(user);
+
   await validatePasswordOrFail(password, user.password);
 
   const token = await createSession(user.id);

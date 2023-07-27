@@ -32,8 +32,23 @@ async function verifyUserManager(userId:number) {
   
 }
 
+async function createAdmin({name, password, email, number}: createAdmin) {
+
+  return prisma.user.create({
+    data:{
+      email,
+      name,
+      password,
+      number,
+      manager:true
+    },
+  });
+
+}
+
 type createUser = Pick<User, 'name' | 'number'>
 type UserDefault = Omit<User, 'email' | 'password' | 'manager'>
+type createAdmin = Omit<User, 'id'|'manager'| 'createdAt'>
 
 
 
@@ -41,6 +56,7 @@ const userRepository = {
   findByNumber,
   create,
   verifyUserManager,
+  createAdmin
 };
 
 export default userRepository;

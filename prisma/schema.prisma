@@ -15,7 +15,7 @@ model User {
   name      String      @db.VarChar(255)
   number    String       @db.VarChar(255)
   createdAt DateTime   @default(now())
-  email     String     @default("")
+  email     String     @default("") @unique
   password  String     @default("")
   manager   Boolean    @default(false)
   Session   Session[]
