@@ -1,10 +1,9 @@
 import { prisma } from '@/config';
 import { User } from '@prisma/client'
-import { unauthorizedError } from '@/errors';
 
 async function create(data: createUser) {
 
-  return prisma.user.create({
+  return await prisma.user.create({
     data,
   });
 
@@ -26,15 +25,13 @@ async function findByNumber(number: string):Promise<UserDefault> {
 
 async function verifyUserManager(userId:number) {
 
-  const user = await prisma.user.findFirst({where:{id:userId}})
-
-  if(!user) unauthorizedError
+  return await prisma.user.findFirst({where:{id:userId, manager:true}}) 
   
 }
 
 async function createAdmin({name, password, email, number}: createAdmin) {
 
-  return prisma.user.create({
+  return await prisma.user.create({
     data:{
       email,
       name,

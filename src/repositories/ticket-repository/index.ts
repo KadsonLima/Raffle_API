@@ -12,10 +12,12 @@ async function buyTicket(bodyTicket:BodyTicketBuy){
   const { raffleId , userId, tickets} = bodyTicket;
 
   const raffle = await raffleRepository.findRaffle(raffleId);
-  
+  console.log(raffle)
+
   return raffle
 
 }
+
 
 type BodyTicketBuy = {
   raffleId: number

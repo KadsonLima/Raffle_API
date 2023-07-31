@@ -8,7 +8,7 @@ export const createRaffle =  async (req: Request, res: ResponseWithIo) => {
   const { userId } = res.locals;
   const {title, description, type, maxTicket} = req.body;
 
-  const raffle = raffleService.createRaffle({title, description, type, userId, maxTicket});
+  const raffle = await raffleService.createRaffle({title, description, type, userId, maxTicket});
 
   
 
@@ -16,9 +16,18 @@ export const createRaffle =  async (req: Request, res: ResponseWithIo) => {
 }
 
 export const findRaffle = async (req: Request, res: ResponseWithIo) => {
-  const { raffleId } = req.headers;
+  const { raffleId } = req.params;
 
-  const raffle = raffleService.findRaffle(Number(raffleId));
+  const raffle = await raffleService.findRaffle(Number(raffleId));
+
+  
+
+  res.status(httpStatus.OK).send(raffle);
+}
+
+export const findAllRaffle = async (req: Request, res: ResponseWithIo) => {
+
+  const raffle = await raffleService.findAllRaffle();
 
   
 

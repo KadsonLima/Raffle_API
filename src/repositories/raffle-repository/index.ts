@@ -19,7 +19,7 @@ async function findRaffle(raffleId:number) {
     }
   })
   
-  if(!raffle) notFoundError
+  if(!raffle) throw notFoundError();
 
   return raffle;
 

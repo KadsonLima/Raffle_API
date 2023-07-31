@@ -7,7 +7,7 @@ import { loadEnv, connectDb, disconnectDB } from '@/config';
 
 loadEnv();
 
-import { handleApplicationErrors } from '@/middlewares';
+import { authenticateToken, handleApplicationErrors } from '@/middlewares';
 import { usersRouter, authenticationRouter } from '@/routers';
 import { createServer } from 'http';
 import { raffleRouter } from './routers/raffles-router';
@@ -20,8 +20,9 @@ app
   .use(cors({ origin: '*' }))
   .use(express.json())
   .use('/users', usersRouter)
-  .use('/raffle', raffleRouter)
   .use('/auth', authenticationRouter)
+  .use(authenticateToken)
+  .use('/raffle', raffleRouter)
   .use(handleApplicationErrors);
 
 
